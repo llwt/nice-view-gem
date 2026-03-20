@@ -46,7 +46,7 @@ void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
 #else
     char bat_text[10] = {};
     sprintf(bat_text, "%i%%", state->battery);
-    lv_canvas_draw_text(canvas, 0, 1, 25, &label_dsc, bat_text);
+    lv_canvas_draw_text(canvas, 0, 1, 40, &label_dsc, bat_text);
 #endif
 
 #if IS_ENABLED(CONFIG_NICE_VIEW_GEM_OUTPUT_BACKGROUND)
