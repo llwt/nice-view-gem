@@ -6,7 +6,8 @@
 
 This is a fork of [M165437/nice-view-gem](https://github.com/M165437/nice-view-gem) with the following additions:
 
-- **Hammerbeam pixel art slideshow** on the peripheral screen (30 pieces by Collin Hodge, ~10s each), selectable as an alternative to the original crystal animation
+- **Hammerbeam pixel art slideshow** on the peripheral screen (30 pieces by Collin Hodge, ~1 min each), selectable as an alternative to the original crystal animation
+- **Battery level on peripheral** — the peripheral screen shows battery percentage alongside the connection icon instead of the "SIG" label
 - **Configurable connection icon background** — the inverted rectangle behind BT/USB icons can be toggled off for a cleaner look
 - Compatible with **ZMK v0.3** (use the `v0.3-patched` branch)
 
@@ -55,7 +56,7 @@ All upstream options are supported, plus additional options from this fork.
 | `CONFIG_NICE_VIEW_GEM_WPM_FIXED_RANGE` | bool | Use a fixed range for the WPM chart and gauge. Set to `n` for dynamic range. | y |
 | `CONFIG_NICE_VIEW_GEM_WPM_FIXED_RANGE_MAX` | int | Maximum value for the fixed WPM range. | 100 |
 | `CONFIG_NICE_VIEW_GEM_ANIMATION` | bool | Enable animation on the peripheral screen. Set to `n` to show a random static frame instead. | y |
-| `CONFIG_NICE_VIEW_GEM_ANIMATION_MS` | int | Total animation/slideshow duration in milliseconds. | 960 (crystal) / 300000 (slideshow) |
+| `CONFIG_NICE_VIEW_GEM_ANIMATION_MS` | int | Total animation/slideshow duration in milliseconds. | 960 (crystal) / 1800000 (slideshow) |
 | `CONFIG_NICE_VIEW_WIDGET_INVERTED` | bool | Invert all display colors. | n |
 
 ### Fork additions

@@ -54,7 +54,7 @@ endchoice
 config NICE_VIEW_GEM_ANIMATION_MS
     int "Animation length in milliseconds"
     default 960 if NICE_VIEW_GEM_ART_CRYSTAL
-    default 300000
+    default 1800000
 
 config NICE_VIEW_WIDGET_STATUS
     select LV_USE_LABEL
