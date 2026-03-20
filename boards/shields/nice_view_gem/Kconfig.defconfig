@@ -63,6 +63,21 @@ config NICE_VIEW_WIDGET_STATUS
     select LV_USE_ANIMIMG
     select LV_USE_ANIMATION
 
+choice NICE_VIEW_GEM_WPM_STYLE
+    prompt "WPM gauge style on central screen"
+    default NICE_VIEW_GEM_WPM_NEEDLE
+
+config NICE_VIEW_GEM_WPM_NEEDLE
+    bool "Gauge with needle (original)"
+
+config NICE_VIEW_GEM_WPM_BONGO_CAT
+    bool "Bongo Cat (WPM-reactive)"
+
+config NICE_VIEW_GEM_WPM_LUNA
+    bool "Luna dog (WPM-reactive)"
+
+endchoice
+
 config NICE_VIEW_GEM_OUTPUT_BACKGROUND
     bool "Show background behind connection status icon"
 

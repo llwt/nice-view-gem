@@ -123,8 +123,10 @@ static void draw_label(lv_obj_t *canvas, const struct status_state *state) {
 }
 
 void draw_wpm_status(lv_obj_t *canvas, const struct status_state *state) {
+#if IS_ENABLED(CONFIG_NICE_VIEW_GEM_WPM_NEEDLE)
     draw_gauge(canvas, state);
     draw_needle(canvas, state);
+#endif
     draw_grid(canvas);
     draw_graph(canvas, state);
     draw_label(canvas, state);
