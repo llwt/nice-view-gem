@@ -42,10 +42,6 @@ void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono, LV_TEXT_ALIGN_LEFT);
     canvas_draw_text(canvas, 0, 1, 25, &label_dsc, "SIG");
 
-    lv_draw_rect_dsc_t rect_white_dsc;
-    init_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND);
-    canvas_draw_rect(canvas, 43, 0, 24, 15, &rect_white_dsc);
-
 #if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
     switch (state->selected_endpoint.transport) {
     case ZMK_TRANSPORT_USB:
