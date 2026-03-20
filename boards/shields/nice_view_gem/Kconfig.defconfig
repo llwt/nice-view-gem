@@ -63,6 +63,9 @@ config NICE_VIEW_WIDGET_STATUS
     select LV_USE_ANIMIMG
     select LV_USE_ANIMATION
 
+config NICE_VIEW_GEM_OUTPUT_BACKGROUND
+    bool "Show background behind connection status icon"
+
 config NICE_VIEW_WIDGET_INVERTED
     bool "Invert display colors"
 
