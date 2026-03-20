@@ -2,6 +2,7 @@
 #include "output.h"
 #include "../assets/custom_fonts.h"
 
+LV_IMG_DECLARE(bolt);
 LV_IMG_DECLARE(bt_no_signal);
 LV_IMG_DECLARE(bt_unbonded);
 LV_IMG_DECLARE(bt);
@@ -47,6 +48,13 @@ void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
     char bat_text[10] = {};
     sprintf(bat_text, "%i%%", state->battery);
     lv_canvas_draw_text(canvas, 0, 1, 40, &label_dsc, bat_text);
+
+    if (state->charging) {
+        lv_draw_img_dsc_t img_dsc;
+        lv_draw_img_dsc_init(&img_dsc);
+        int bolt_x = (int)strlen(bat_text) * 8 + 1;
+        lv_canvas_draw_img(canvas, bolt_x, 4, &bolt, &img_dsc);
+    }
 #endif
 
 #if IS_ENABLED(CONFIG_NICE_VIEW_GEM_OUTPUT_BACKGROUND)
