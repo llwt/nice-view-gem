@@ -6,8 +6,9 @@
 
 This is a fork of [M165437/nice-view-gem](https://github.com/M165437/nice-view-gem) with the following additions:
 
+- **WPM gauge style toggle** — choose between the original gauge/needle, Bongo Cat, or Luna dog as the WPM indicator on the central screen
+- **Unified status bar** — battery percentage, charging indicator, and connection icon on a single line (replaces separate SIG/BAT labels) on both screens
 - **Hammerbeam pixel art slideshow** on the peripheral screen (30 pieces by Collin Hodge, ~1 min each), selectable as an alternative to the original crystal animation
-- **Battery level on peripheral** — the peripheral screen shows battery percentage alongside the connection icon instead of the "SIG" label
 - **Configurable connection icon background** — the inverted rectangle behind BT/USB icons can be toggled off for a cleaner look
 - Compatible with **ZMK v0.3** (use the `v0.3-patched` branch)
 
@@ -65,12 +66,27 @@ All upstream options are supported, plus additional options from this fork.
 | --- | --- | --- | --- |
 | `CONFIG_NICE_VIEW_GEM_ART_CRYSTAL` | bool | Use the original rotating crystal animation on the peripheral screen. | n |
 | `CONFIG_NICE_VIEW_GEM_ART_SLIDESHOW` | bool | Use the hammerbeam pixel art slideshow on the peripheral screen. | y |
+| `CONFIG_NICE_VIEW_GEM_WPM_NEEDLE` | bool | Use the original gauge/needle WPM indicator on the central screen. | y |
+| `CONFIG_NICE_VIEW_GEM_WPM_BONGO_CAT` | bool | Use Bongo Cat as the WPM indicator (types faster as WPM increases). | n |
+| `CONFIG_NICE_VIEW_GEM_WPM_LUNA` | bool | Use Luna dog as the WPM indicator (sits/walks/runs based on WPM). | n |
 | `CONFIG_NICE_VIEW_GEM_OUTPUT_BACKGROUND` | bool | Show a filled background rectangle behind the BT/USB connection icon (original upstream behavior). | n |
 
 To switch to the crystal animation, add to your `.conf`:
 
 ```conf
 CONFIG_NICE_VIEW_GEM_ART_CRYSTAL=y
+```
+
+To use Bongo Cat instead of the gauge/needle:
+
+```conf
+CONFIG_NICE_VIEW_GEM_WPM_BONGO_CAT=y
+```
+
+To use Luna dog:
+
+```conf
+CONFIG_NICE_VIEW_GEM_WPM_LUNA=y
 ```
 
 To restore the original inverted connection icon style:
@@ -85,4 +101,5 @@ CONFIG_NICE_VIEW_GEM_OUTPUT_BACKGROUND=y
 - [Teenage Engineering TX-6](https://teenage.engineering/products/tx-6) for the UI design inspiration
 - [Trixelized](https://trixelized.itch.io/) for the crystal pixel art
 - [Collin Hodge](https://github.com/GPeye/hammerbeam-slideshow) for the hammerbeam pixel art
+- [mctechnology17/zmk-nice-oled](https://github.com/mctechnology17/zmk-nice-oled) for the Bongo Cat and Luna dog animations
 - [Jayvee Enaguas](https://github.com/jvne) for the Pixel Operator font ([CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/))
