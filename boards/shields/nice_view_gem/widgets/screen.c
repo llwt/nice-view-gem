@@ -228,7 +228,7 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
 
 #if IS_ENABLED(CONFIG_NICE_VIEW_GEM_WPM_BONGO_CAT) || IS_ENABLED(CONFIG_NICE_VIEW_GEM_WPM_LUNA)
     zmk_widget_wpm_pet_init(&wpm_pet_widget, widget->obj);
-    lv_obj_align(zmk_widget_wpm_pet_obj(&wpm_pet_widget), LV_ALIGN_TOP_RIGHT, -30, 14);
+    lv_obj_align(zmk_widget_wpm_pet_obj(&wpm_pet_widget), LV_ALIGN_TOP_RIGHT, -30, 8);
 #endif
 
     return 0;
